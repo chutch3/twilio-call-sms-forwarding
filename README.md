@@ -29,7 +29,19 @@ When a voice call is received, the function will:
 
 When an SMS is received, the function will:
 - Check if the sender is allowed (if restrictions are set)
-- Forward the message content to the specified number
+- Tag the message with the original sender's number
+- Forward the tagged message to the specified number
+
+For responses from the forwarding number:
+- The system will automatically route the response back to the original sender
+- The recipient at the forwarding number can simply reply to the tagged message
+
+## Message Format
+
+Forwarded messages are tagged with the following format:
+`➡️OriginalSenderNumber:MessageContent`
+
+The right arrow emoji (➡️) indicates a forwarded message. When replying, the system will automatically handle routing based on this format.
 
 ## Configuration
 
